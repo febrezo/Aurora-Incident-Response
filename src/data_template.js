@@ -46,8 +46,8 @@ data_template  = {
         {id:3,text:"Completed"},
     ],
     "direction":[
-        {id:1,text:"<-"},
-        {id:2,text:"->"},
+        {id:1,text:"◀"},
+        {id:2,text:"▶"},
     ],
     "killchain":[
         { id: 1, text: 'Recon' },
