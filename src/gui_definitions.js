@@ -723,19 +723,33 @@ var config = {
 about_content = `
 
     <div id="aboutcontent" style="position: absolute; left: 5px; top: 5px; right: 5px; bottom: 5px;">
-    <p>Aurora 0.6.3</p>
-    (c) 2020 Mathias Fuchs (<a onclick="browser_open('https://cyberfox.blog')" href="#">https://cyberfox.blog</a>)
-    <p>Released under Apache 2.0 License</p>
-    <p>Supported and used by <a onclick="browser_open('https://www.infoguard.ch')" href="#">InfoGuard</a></p>
-    <p>Application build using electron.js - <a onclick="browser_open('https://electronjs.org')"  href="#">https://electronjs.org</a></p>
-    <p>Icons provided by <a onclick="browser_open('https://icons8.com')"  href="#">https://icons8.com</a> and <a onclick="browser_open('https://fontawesome.com')"  href="#">https://fontawesome.com</a> </p>
-    <p>UI designed using <a onclick="browser_open('http://w2ui.com')"  href="#">http://w2ui.com</a></p>
-    <p>Visualization uses <a onclick="browser_open('http://visjs.org')"  href="#">http://visjs.org</a> and <a onclick="browser_open('https://www.chartjs.org')"  href="#">https://www.chartjs.org</a></p>
-
+    <center>
+    <br>
+    <h1>Boreal Incident Handling Tool 0.1.0</h1>
+    <br>
      <p>
         <img src="img/logo.png">
         <img src="img/ig.png">
     </p>
 
+    <br>
+    (c) 2020 Mathias Fuchs (<a onclick="browser_open('https://cyberfox.blog')" href="#">https://cyberfox.blog</a>) & Félix Brezo (<a onclick="browser_open('https://github.com/febrezo')" href="#">@febrezo</a>)
+
+    <br>
+    <p>Supported and used by <a onclick="browser_open('https://www.infoguard.ch')" href="#">InfoGuard</a>.</p>
+    <br>
+
+    <h3>Released under GPLv3+ License</h3>
+    <br>
+
+    <h3>Technologies Used:</h3>
+    <br>
+    <p>Development framework: electron.js: <a onclick="browser_open('https://electronjs.org')"  href="#">https://electronjs.org</a></p>
+    <p>Icons: <a onclick="browser_open('https://icons8.com')"  href="#">https://icons8.com</a> and <a onclick="browser_open('https://fontawesome.com')"  href="#">https://fontawesome.com</a> </p>
+    <p>UI designeddesign: <a onclick="browser_open('http://w2ui.com')"  href="#">http://w2ui.com</a></p>
+    <p>Visualization: <a onclick="browser_open('http://visjs.org')"  href="#">http://visjs.org</a> and <a onclick="browser_open('https://www.chartjs.org')"  href="#">https://www.chartjs.org</a></p>
+
+
+    </center>
     </div>
     `

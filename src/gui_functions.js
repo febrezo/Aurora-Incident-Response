@@ -164,7 +164,7 @@ function deactivateReadOnly(){
 function openAboutPopup() {
 
     w2popup.open({
-        title: 'About Aurora IR',
+        title: 'About Boreal Incident Handling Tool',
         width: 900,
         height: 600,
         showMax: true,
