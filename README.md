@@ -5,7 +5,11 @@ Aurora (and Boreal) brings "Spreadsheet of Doom" used in the SANS FOR508 class t
 
 It's intended to be used in small and big incident response investigations to track findings, tasks, making reporting easy and generally stay on top of the game.
 
-## 1. But why a fork?
+## 1. Download & Installation
+
+You can download the current release of **Boreal: Incident Handling Tool** from the [Release Page](https://github.com/febrezo/Aurora-Incident-Response/releases). Boreal Incident Handling Tool is available for MacOS, Windows and Linux. We are working on making it available for iPads and Android Tablets as well.
+
+## 2. But why a fork?
 
 This fork is intended to deploy my own testing builds of Aurora prior to merge them. 
 The changes I will submit here will be GPLv3-licensed, that is to say, any user receiving or forking this repo should take into account that the source code SHOULD be provided to the users to which the app is conveyed. This is something that is relevant for me from an ethical point of view: keeping code (and derivate code) as opened to the public as possible.  
@@ -15,10 +19,6 @@ This is fully compatible with Mathias Fulchs original licensing proposal (Apache
 This fork does not mean that I'm not contributing to Aurora. Any relevant changes I'll do, I'll share them upstream with the original repository as I have already been doing lately. But while the the changes are merged upstream, having the chance of testing the builds separetely is also a good point.
 
 And yes. Boreal comes from [Aurora Boreal](https://en.wikipedia.org/wiki/Aurora). 
-
-## 2. Download & Installation
-
-You can download the current release of Boreal: Incident Handling Tool from the [Release Page](https://github.com/febrezo/Aurora-Incident-Response/releases). Boreal Incident Handling Tool is available for MacOS, Windows and Linux. We are working on making it available for iPads and Android Tablets as well.
 
 ## 3. Development
 
