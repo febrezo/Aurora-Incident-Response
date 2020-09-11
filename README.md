@@ -1,155 +1,175 @@
-# 1 Aurora Incident Response
+# Boreal: Incident Handling Tool
 
-Incident Response Documentation made easy. Developed by Incident Responders for Incident Responders.
-Aurora brings "Spreadsheet of Doom" used in the SANS FOR508 class to the next level. 
+Boreal is a fork of [Aurora](https://github.com/cyb3rfox/Aurora-Incident-Response), an amazing original idea by Mathias Fulchs to document cases in incident response scenarios. As he says in the original repository it is "Developed by Incident Responders for Incident Responders".
+Aurora (and Boreal) brings "Spreadsheet of Doom" used in the SANS FOR508 class to the next level. 
 
-It's intended to be used in small and big incident response investigations to track findings, tasks, making reporting easy
-and generally stay on top pf the game.
+It's intended to be used in small and big incident response investigations to track findings, tasks, making reporting easy and generally stay on top pf the game.
 
 
-## 1.1 Download & Installation
+## 1. But why a fork?
 
-You can download the current release of Aurora Incident Response from the Release Page (https://github.com/cyb3rfox/Aurora-Incident-Response/releases).
-Aurora Incident Response is available for MacOS, Windows and Linux. We are working on making it available for
-iPads and Android Tablets as well.
+This fork is intended to deploy my own testing builds of Aurora prior to merge them. 
+The changes I will submit here will be GPLv3-licensed, that is to say, any user receiving or forking this repo should take into account that the source code SHOULD be provided to the users to which the app is conveyed. This is something that is relevant for me from an ethical point of view: keeping code (and derivate code) as opened to the public as possible.  
 
-## 1.2 Developement
+This is fully compatible with Mathias Fulchs original licensing proposal (Apache License) since GPLv3 software can include Apache-licensed code providing that the code is appropiately quoted and mentioned.  
+
+This fork does not mean that I'm not contributing to Aurora. Any relevant changes I'll do, I'll share them upstream with the original repository as I have already been doing lately. But while the the changes are merged upstream, having the chance of testing the builds separetely is also a good point.
+
+And yes. Boreal comes from [Aurora Boreal](https://en.wikipedia.org/wiki/Aurora). 
+
+## 2. Download & Installation
+
+You can download the current release of Boreal: Incident Handling Tool from the [Release Page](https://github.com/febrezo/Aurora-Incident-Response/releases). Boreal Incident Handling Tool is available for MacOS, Windows and Linux. We are working on making it available for iPads and Android Tablets as well.
+
+## 3. Development
 
 If you want to contribute, you are encouraged to do so. I'd totally like to see the tool growing. 
-The whole application is build on an electron base and written in plain javascript and html.
-Even though technically I could have used node.js modules for functionality like webdav I refrained from it.
-The reason is, that node modules will not run out of the box when migrating the code to phonegap for IOS and Android.
-The good news is, it's really fast to set uo your development environment. I personally use Webstorm but it should work with pretty much any IDE.
+The whole application is built on an Electron base and written in plain Javascript and HTML.
+Even though technically `node.js` modules for functionality like Webdav this was discarded since node modules will not run out of the box when migrating the code to phonegap for IOS and Android.
+The good news is that it's really fast to set up your development environment. I personally use elementary Code with `node` installed in my system but it should work with pretty much any IDE.
 
-### 1.2.1 Set up your build environment
+### 3.1 Set up your build environment
 
-As pointed out in the description, Aurora Incident Response is built ib top of Electron which allows for multi platform compatibility.
+As pointed out in the description, Boreal Incident Handling Tool is built in top of Electron which allows for multi platform compatibility.
 You can easily install your tool chain the following way.
 
-Start by installing node.js. Follow the links to their download page.
+Start by installing node.js. Follow the links to their [download page](https://nodejs.org/en/download/).
 
-https://nodejs.org/en/download/
+With `nodejs` installed, checkout the Boreal Github repo (or fork first if you want to contribute) and checkout to `dev`, which is the branch in which I keep track of Boreal changes.
 
-With nodejs installed, checkout the Aurora github repo (or fork first if you want to contribute).
-
-<code>git clone https://github.com/cyb3rfox/Aurora-Incident-Response </code>
-
-<code>cd Aurora-Incident-Response/src
-</code>
+```
+git clone https://github.com/febrezo/Aurora-Incident-Response
+cd Aurora-Incident-Response/src
+```
 
 
-Now you need to install electron using node. Currently Aurora is configured to run with electron 4.0.6. 
+Now you need to install Electron using node. Currently Boreal is configured to run with Electron 4.0.6. 
 
-<code>npm install electron@4.0.6 </code>
+```
+npm install electron@4.0.6
+```
 
 You can now run the code by invoking
 
-<code>node_modules/.bin/electron .</code>
+```
+node_modules/.bin/electron .
+```
 
 That's fast, isn't it?
 
-### 1.2.2 Roadmap
+### 3.2 Roadmap
 
 The following points are already on the roadmap. Please just post a new issue or send a message on twitter if you got any suggestions for new improvements.
 
 * Add Webdav capability for easier sharing (Currently multiuser mode uses shares) &#128679;
 * Add csv import and export functionality with custom field mapping
-* Create a tablet version (only makes sense once webdav works)
+* Create a tablet version (only makes sense once Webdav works)
 * Reporting System to export prefilled report templates (requires adding killchain stage to timeline elements)
 
+### 3.3 Build executables for distribution
 
-### 1.2.3 Build executables for distribution
+To build and cross build you can use `c`. 
 
-To build and cross build you I use electron-packager. 
-<code>npm install electron-packager</code>
+```
+npm install electron-packager
+```
 
-Build for Windows:
+To build it for Windows, once in the `src` folder:
 
-<code>./node_modules/.bin/electron-packager . Aurora --asar --prune --platform=win32 --electron-version=4.0.6 --arch=x64 --icon=icon/aurora.ico --out=release-builds --ignore "node_modules/\.bin" </code>
+```
+./node_modules/.bin/electron-packager . Aurora --asar --prune --platform=win32 --electron-version=4.0.6 --arch=x64 --icon=icon/aurora.ico --out=release-builds --ignore "node_modules/\.bin"
+```
 
-Build for MacOS:
+To build it for MacOS, from the same `src` folder:
 
-<code>./node_modules/.bin/electron-packager ./src Aurora --overwrite --platform=darwin --arch=x64 --icon=icon/aurora.icns --prune=true --out=release-builds </code>
+```
+./node_modules/.bin/electron-packager ./src Aurora --overwrite --platform=darwin --arch=x64 --icon=icon/aurora.icns --prune=true --out=release-builds
+```
 
-Build for Linux:
+And finally, to build it for GNU/Linux, in the same `src` folder type:
 
-<code>./node_modules/.bin/electron-packager . Aurora --asar --prune --platform=linux --electron-version=4.0.6 --arch=x64 --icon=icon/aurora.ico --out=release-builds --ignore "node_modules/\.bin" </code>
 
-### 1.2.4 Sourcecode Navigator
+```
+./node_modules/.bin/electron-packager . Aurora --asar --prune --platform=linux --electron-version=4.0.6 --arch=x64 --icon=icon/aurora.ico --out=release-builds --ignore "node_modules/\.bin"
+```
+
+### 3.4 Sourcecode Navigator
 
 This section describes the various sourcecode files. For now I need to keep this section small. I tried to comment in the code as good as I can. If you got any questions, just ping me. If you want to join me developing the tool, there's a slack channel to communicate. Drop me a note and I will invite you.
 
-#### 1.2.4.1 main.js
-Electron apps differentiates between a main (background) and a render process(chromium browser window). This file controls the main process. 
-For aurora you usually only need to go there if you want to turn on the javascript console in the Aurora window. Just unquote the following line:
+#### 3.4.1 `main.js`
+Electron apps differentiates between a main (background) and a render process(chromium browser window). This file controls the main process.
+ 
+For Aurora, you usually only need to go there if you want to turn on the Javascript console in the Aurora window. Just unquote the following line:
 
-<code>win.webContents.openDevTools()</code> 
+```
+win.webContents.openDevTools()
+``` 
 
-The second thing that's handled there is autosaving and unlocking when you exit the program. For that the main and the render process share a global variable 
-called <code>global.Dirty.is_dirty</code> that is used to signal to the main process if it can quit right away or if the file needs to be sanitized before exiting.
+The second thing that's handled there is autosaving and unlocking when you exit the program. For that the main and the render process share a global variable called <code>global.Dirty.is_dirty</code> that is used to signal to the main process if it can quit right away or if the file needs to be sanitized before exiting.
 It's actually a very similar concept to the NTFS dirty bit.
  
-#### 1.2.4.2 index.html
-This is the main aurora file that strings together all scripts and stylesheets. It also initiates the GUI. other than that it has no functionality.
+#### 3.4.2 `index.html`
+This is the main Boreal file that strings together all scripts and stylesheets. It also initiates the GUI. Other than that it has no functionality.
  
-#### 1.2.4.3 gui_definitions.js
+#### 3.4.3 `gui_definitions.js`
 I tried as good as I can to separate code an design. This file holds all the definition json for the w2ui gui. There is some code left in there
 for the renderers that format certain columns. It didn't make sense to place them anywhere else.
  
-#### 1.2.4.4 controller.js
+#### 3.4.4 `controller.js`
 The controller injects the handling functions for gui events. So whenever a button is pressed, or any other event needed happens, controller.js handles what happens.
  
-#### 1.2.4.5 gui_functions.js 
+#### 3.4.5 `gui_functions.js `
 Every now and then operations happen that change something in the gui. That could e.g. be making all the datafields readonly when you don't have the lock or simply opening a popup.
 All these functions are located in this file.
   
-#### 1.2.4.6 data.js
+#### 3.4.6 `data.js`
 While the actual data is stored in the w2ui datasctructures, for saving and some other operations we need to bring it into out format. 
 Transformations like this and all logic regarding saving and opening files is located here.
  
-#### 1.2.4.7 data_template.js
+#### 3.4.7 `data_template.js`
   
 This holds templates for the internal data format of that version. Current format version is 3. 
  
-#### 1.2.4.8 misp.js
+#### 3.4.8 `misp.js`
  
-Code for MISP integration
+Code for MISP integration.
  
-#### 1.2.4.9 virustotal.js
+#### 3.4.9 `virustotal.js`
   
-Code for VT integration
+Code for VT integration.
  
-#### 1.2.4.10 settings.js
+#### 3.4.10 `settings.js`
  
 Settings for different libraries. Currently only defines the time field format for w2ui.
  
-
-#### 1.2.4.10 helper_functions.js
+#### 3.4.11 `helper_functions.js`
 Small helper functions that do not fit anywhere else.
 
 
-## 1.3 Licensing
+## 4 Credits
 
-Aurora is licensed under the Apache 2 License
+Thanks to [Mathias Fuchs](https://twitter.com/mathias_fuchs) for the idea. It's obvious the amount of time spent in developing Aurora and his knowledge in the field. Incident responders like me myself are in debt with his job.
 
-## 1.4 Credits
-Projects like this can only be realized because many people invested thousands of hours into writing cool libraries and other software. Others contribute professional UI items. Thank you for all your great work. Namely I build Aurora based on the following dependencies:
+Projects like this can only be realized because many people invested thousands of hours into writing cool libraries and other software. Others contribute professional UI items. Thank you for all your great work.
+
+Aurora is concretely build on the following dependencies: 
 
 * Electron https://www.electronjs.org
 * jquery https://jquery.com
 * w2ui http://w2ui.com/web/
 * vis.js https://visjs.org
 * icons8 https://icons8.com
-* Fontawsome https://fontawesome.com
+* Fontawesome https://fontawesome.com
 
 Besides the incredible amount of work that people invested into these projects, you need other support as well. Writing the code is easy, but making it a tool the works in reality depends on a vast amount of experience from many incident responders. 
-Here I particularly want to mention the members of my IR team who contributed their knowledge and helped testing the tool in real world cases:
+Here Mathias particularly wanted to mention the members of his IR team who contributed their knowledge and helped testing the tool in real world cases:
 
 * Rothi
 * Bruno
 * Sandro
 
-Even though this is a side and weekend project it's still good to know, that my employer Infoguard AG supports me in any way they can. Thank you particularly to:
+Even though this is a side and weekend project it's still good to know, that his employer Infoguard AG supports me in any way they can. So thanks to them too:
 
 * Ernesto
 * Thomas
