@@ -68,7 +68,7 @@ The following points are already on the roadmap. Please just post a new issue or
 
 ### 3.3 Build executables for distribution
 
-To build and cross build you can use `c`. 
+To build and cross build you can use the `electron-packager` tool which can be installed using `npm`. 
 
 ```
 npm install electron-packager
